@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="cor">
+    <h1>Calcular Média</h1>
+    Digite a sua primeira nota <input type="number" name="n1" id="n1">
+    Digite a sua segunda nota <input type="number" name="n2" id="n2">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+        var nota1 = document.getElementById('n1')
+        var nota2 = document.getElementById('n2')
+        var nt1 = Number(nota1.value)
+        var nt2 = Number(nota2.value)
+        var res = document.getElementById('res')
+        var soma = (nt1 + nt2)/2
+            res.innerHTML = `<p>Sua media é <strong>${soma}</strong></p>`
+            if (soma >= 6){
+                res.innerHTML += `<p><strong>APROVADO</strong></p>`
+            } else{
+                res.innerHTML += `<p><strong>REPROVADO<style></strong></p>`
+            }
+        }
+
+    </script>
+    </div>
+</body>
+</html>

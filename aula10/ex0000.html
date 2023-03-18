@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indice de Massa Múscular</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+        input{
+            font: normal 28pt Arial;
+            width: 90px;
+            height: 40px;
+        }
+        #calcular{
+            width: 170px;
+        }
+        #calcular:hover{
+            background: rgba(52, 204, 52, 0.63);
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcúlando indice</h1>
+    <p>Digite sua altura em <strong> Metros (M) </strong>: <input type="number" name="alt" id="alt"></p>
+   <p>Digite seu <strong> Peso (KG) </strong>: <input type="number" name="ps" id="ps"></p> 
+    <input type="button" value="calcular" onclick="calcular()" id="calcular">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var at1 = document.getElementById('alt')
+            var ps1 = document.getElementById('ps')
+            var res = document.getElementById('res')
+            var altura = Number(at1.value)
+            var peso = Number(ps1.value)
+            var massa = peso / (altura * altura)
+            res.innerHTML = massa.toFixed(2)
+            
+            if (massa < 18.5){
+                res.innerHTML += ' O seu peso está Abaixo do peso'
+            }
+            if (massa >= 18.5 && massa <= 24.9){
+                res.innerHTML += ' O seu peso está Normal'
+            }
+            if (massa >= 25 && massa <= 29.9){
+                res.innerHTML += ' O seu peso está Sobrepeso'
+            }
+            if (massa >= 30 && massa <= 34.9){
+                res.innerHTML += ' O seu peso está Obesidade I'
+            }
+            if (massa >= 35 && massa <= 39.9){
+                res.innerHTML += ' O seu peso está Obesidade II'
+            }
+            if (massa > 40){
+                res.innerHTML += ' O seu peso está Obesidade III'
+            }
+        }
+    </script>
+</body>
+</html>

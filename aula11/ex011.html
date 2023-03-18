@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            font: normal 20pt arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Digite aqui seu pais: <input type="text" name="vel" id="vel">
+    <input type="button" value="Analisar" onclick="clicar()">
+    <div id="res"></div>
+
+    <script>
+    function clicar(){
+            var txtn1 = document.getElementById('vel').value
+            var res = document.getElementById('res')
+            if (txtn1 == 'Brasil'){
+            res.innerHTML = `Sua nacionalidade é <strong>Brasileira</strong>`
+        } else {
+            res.innerHTML = `Sua nacionalidade é <strong>Estrangeira</strong>`
+        }
+    }
+    </script>
+</body>
+</html>
