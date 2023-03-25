@@ -1,0 +1,15 @@
+
+.container{
+    display: flex;
+}
+
+.bloco{
+    margin: 7px;
+    padding: 20px 40px;
+    background-color: lightgray;
+}
+
+h1{
+    margin-left: 7px;
+}
+
